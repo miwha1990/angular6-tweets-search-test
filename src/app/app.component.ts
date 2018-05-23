@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenService } from "./services/token/token.service";
 
 @Component({
   selector: 'ngwzp-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngwzp';
+  constructor(private tokenService: TokenService) {
+    this.tokenService.setUser();
+  }
 }

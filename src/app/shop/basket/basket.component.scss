@@ -1,0 +1,15 @@
+@import "~@angular/material/theming";
+:host {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.card {
+  width: 500px;
+  margin: 0 auto;
+}
+
+mat-list-item:hover {
+  background: mat-color($mat-indigo, 50);
+}

@@ -1,0 +1,12 @@
+<header>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span [routerLink]="['shop']">Angular Shop</span>
+      <span class="spacer"></span>
+      <mat-icon class="icon mat-badge mat-badge-accent mat-badge-overlap mat-badge-medium" [routerLink]="['shop/basket']" matBadge={{productsCount}} matBadgePosition="above after">shopping_cart</mat-icon>
+      <mat-icon class="icon" (click)="goToProfile()">person</mat-icon>
+      <p>{{tokenService.userData?.email}}</p>
+      <mat-icon *ngIf="tokenService.userData" (click)="signOut()" class="icon">exit_to_app</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

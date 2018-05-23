@@ -1,0 +1,35 @@
+// PRODUCT STYLE
+.product {
+  order: 0;
+  display: flex;
+  align-self: auto;
+  margin: 10px;
+}
+
+.card {
+  max-width: 250px;
+}
+
+.header-image {
+  background-image: url('../../../assets/img/DC_Comics_logo.png');
+  background-size: cover;
+}
+
+.mat-card-image {
+  margin-bottom: 20px;
+}
+
+.image-container {
+  position: relative;
+  >img {
+    width: 100%;
+  }
+}
+
+.buy-button {
+  position: absolute;
+  right: 25px;
+  bottom: -25px;
+}
+
+// END PRODUCT STYLE

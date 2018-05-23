@@ -1,0 +1,33 @@
+:host {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.card {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+  .profile-image, .profile-info {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+  .profile-image > img {
+    max-width: 150px;
+  }
+  .profile-info {
+    margin-left: 30px;
+    label {
+      font-weight: bold;
+    }
+  }
+}

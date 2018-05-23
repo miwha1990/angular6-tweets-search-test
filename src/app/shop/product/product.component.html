@@ -1,0 +1,19 @@
+<div class="product">
+  <mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>DC Comics</mat-card-title>
+      <mat-card-subtitle>{{product.title}}</mat-card-subtitle>
+    </mat-card-header>
+    <div mat-card-image class="image-container">
+      <img [src]="product.image" alt="Batman comics">
+      <button (click)="addToBasket()" class="buy-button" mat-fab>
+        <mat-icon aria-label="Buy">shopping_cart</mat-icon>
+      </button>
+    </div>
+    <mat-card-content>
+      <p>{{product.description}}</p>
+      <p><strong>${{product.price}}</strong></p>
+    </mat-card-content>
+  </mat-card>
+</div>

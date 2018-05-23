@@ -1,0 +1,18 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>
+      <h3>Your Profile</h3>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="profile-content">
+      <div class="profile-image" (click)="openModal()">
+        <img [src]="profile.avatar">
+      </div>
+      <div class="profile-info">
+        <label>Email:</label>
+        <p>{{profile.email}}</p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
