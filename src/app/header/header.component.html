@@ -3,7 +3,19 @@
     <mat-toolbar-row>
       <span [routerLink]="['shop']">Angular Shop</span>
       <span class="spacer"></span>
-      <mat-icon class="icon mat-badge mat-badge-accent mat-badge-overlap mat-badge-medium" [routerLink]="['shop/basket']" matBadge={{productsCount}} matBadgePosition="above after">shopping_cart</mat-icon>
+        <mat-icon
+          *ngIf="productsCount;else empty_basket"
+          class="icon mat-badge mat-badge-accent mat-badge-overlap mat-badge-medium"
+          [routerLink]="['shop/basket']"
+          matBadge={{productsCount}}
+        >shopping_cart</mat-icon>
+        <ng-template #empty_basket>
+          <mat-icon
+            #empty_basket
+            class="icon"
+            [routerLink]="['shop/basket']"
+          >shopping_cart</mat-icon>
+        </ng-template>
       <mat-icon class="icon" (click)="goToProfile()">person</mat-icon>
       <p>{{tokenService.userData?.email}}</p>
       <mat-icon *ngIf="tokenService.userData" (click)="signOut()" class="icon">exit_to_app</mat-icon>

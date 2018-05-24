@@ -4,7 +4,8 @@ import {
   state,
   style,
   animate,
-  transition
+  query,
+  transition, stagger, animateChild
 } from '@angular/animations';
 
 import {ProductService} from "../../services/product/product.service";
@@ -15,17 +16,17 @@ import {ProductModel, IResponse} from "../../model";
   templateUrl: './shop-window.component.html',
   styleUrls: ['./shop-window.component.scss'],
   animations: [
-    trigger('listAnimation', [
-      state('inactive', style({
-        backgroundColor: '#eee',
-        transform: 'scale(1)'
-      })),
-      state('active',   style({
-        backgroundColor: '#cfd8dc',
-        transform: 'scale(1.1)'
-      })),
-      transition('inactive => active', animate('100ms ease-in')),
-      transition('active => inactive', animate('100ms ease-out'))
+    trigger('list', [
+      transition(':enter', [
+        query('@items', stagger(300, animateChild()))
+      ]),
+    ]),
+    trigger('items', [
+      transition(':enter', [
+        style({ transform: 'scale(0.5)', opacity: 0 }),  // initial
+        animate('1s cubic-bezier(.8, -0.6, 0.2, 1.5)',
+          style({ transform: 'scale(1)', opacity: 1 }))  // final
+      ])
     ])
   ]
 })

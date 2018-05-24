@@ -1,5 +1,6 @@
-<div class="product-container" [@listAnimation]="productsLength">
+<div class="product-container" @list *ngIf="productsLength">
     <ngwzp-product
+      @items
       (domChange)="onDomChange($event)"
       class="product-item"
       *ngFor="let product of products"
