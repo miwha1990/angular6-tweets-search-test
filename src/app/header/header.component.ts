@@ -32,4 +32,8 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['auth/sign-in']);
     }
   }
+
+  public signOut() {
+    this.tokenService.signOut();
+  }
 }

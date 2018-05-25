@@ -3,6 +3,13 @@
   flex: 1;
   flex-wrap: wrap;
 }
+.main {
+  height: 100%;
+  display: grid;
+}
+.main mat-spinner {
+  margin: auto;
+}
 .product-container {
   //display: flex;
   //flex-direction: row;
