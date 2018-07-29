@@ -4,3 +4,20 @@
   flex: 1;
   height: 100%;
 }
+.main {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+}
+.mat-tab-label-active{
+  background: #f9f9f9;
+}
+.mat-tab-nav-bar {
+  border-bottom: none;
+}
+.main-inner{
+  padding: 0 20px;
+  background: #f9f9f9;
+}

@@ -1,0 +1,12 @@
+<!-- pager -->
+<div *ngIf="pager.pages && pager.pages.length" class="pagination">
+  <span [ngClass]="{'disabled':pager.currentPage === 1}">
+    <a (click)="handlePageChange(pager.currentPage - 1)"><</a>
+  </span>
+  <span *ngFor="let page of pager.pages" [ngClass]="{'active':pager.currentPage === page}">
+    <a (click)="handlePageChange(page)">{{page}}</a>
+  </span>
+  <span [ngClass]="{'disabled':pager.currentPage === pager.totalPages}">
+    <a (click)="handlePageChange(pager.currentPage + 1)">></a>
+  </span>
+</div>

@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://galas-ngwshop-api.herokuapp.com",
+    "target": "https://am-twitter-scrape.herokuapp.com/",
     "secure": false,
     "pathRewrite": {
       "^/api": "/api"

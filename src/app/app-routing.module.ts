@@ -1,28 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
+import {TweetsByHashtagComponent} from './Home/tweets-by-hashtag/tweets-by-hashtag.component';
+import {TweetsByUserComponent} from './Home/tweets-by-user/tweets-by-user.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: TweetsByHashtagComponent
   },
   {
-    path: 'shop',
-    loadChildren: './shop/shop.module#ShopModule'
-  },
-  {
-    path: 'auth',
-    loadChildren: './auth/auth.module#AuthModule'
-  },
-  {
-    path: 'profile',
-    loadChildren: './profile/profile.module#ProfileModule'
+    path: 'by-user',
+    component: TweetsByUserComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [ RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

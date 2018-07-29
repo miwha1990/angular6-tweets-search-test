@@ -1,0 +1,22 @@
+<div class="main">
+  <mat-form-field class="search-field">
+    <input matInput placeholder="User search" (keyup)="onSearchChange($event)">
+  </mat-form-field>
+  <div style="color: red">
+    <p>{{error}}</p>
+  </div>
+  <div class="tweets-container" *ngIf="!isLoading; else spinner">
+    <ngwzp-table-content
+      [tweetsLength]="tweetsLength"
+      [displayedColumns]="displayedColumns"
+      [pagedItems]="pagedItems"
+    ></ngwzp-table-content>
+    <ngwzp-pager [pager]="pager" (pageChange)="setPage($event)"></ngwzp-pager>
+
+  </div>
+  <ng-template #spinner class="spinner">
+    <mat-spinner [diameter]="80"></mat-spinner>
+  </ng-template>
+
+</div>
+

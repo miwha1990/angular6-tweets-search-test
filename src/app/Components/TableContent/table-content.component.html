@@ -1,0 +1,35 @@
+<div class="content" *ngIf="tweetsLength">
+  <div class="content-header">
+    <div
+      class="content-header-item"
+      *ngFor="let columnName of displayedColumns"
+    >
+      {{columnName}}
+    </div>
+  </div>
+  <div class="content-body">
+    <div
+      class="tweet-item"
+      *ngFor="let tweet of pagedItems"
+    >
+      <div>
+        {{tweet.text.length > 140 ? tweet.text.substring(0, 140) + '...' : tweet.text}}
+      </div>
+      <div>
+        {{tweet.likes || '-'}}
+      </div>
+      <div>
+        {{tweet.replies || '-'}}
+      </div>
+      <div>
+        {{tweet.retweets || '-'}}
+      </div>
+      <div>
+        {{tweet.hashtags}}
+      </div>
+      <div>
+        {{tweet.date}}
+      </div>
+    </div>
+  </div>
+</div>

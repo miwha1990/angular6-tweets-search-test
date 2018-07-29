@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 
 import {
-  MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatCardModule,
-  MatListModule, MatFormFieldModule, MatInputModule, MatBadgeModule, MatSnackBarModule,
+  MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatCardModule, MatTabsModule,
+  MatListModule, MatFormFieldModule, MatInputModule, MatBadgeModule, MatSnackBarModule, MatTableModule,
   MatProgressSpinnerModule
 } from '@angular/material';
 
@@ -12,6 +12,8 @@ const MATERIAL_COMPONENTS = [
   MatToolbarModule,
   MatIconModule,
   MatCardModule,
+  MatTableModule,
+  MatTabsModule,
   MatListModule,
   MatFormFieldModule,
   MatInputModule,

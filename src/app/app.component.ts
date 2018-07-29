@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TokenService } from "./services/token/token.service";
 
 @Component({
   selector: 'ngwzp-root',
@@ -7,7 +6,16 @@ import { TokenService } from "./services/token/token.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private tokenService: TokenService) {
-    this.tokenService.setUser();
+  public activeLinkIndex = 0;
+  public navLinks = [
+    {path: '/', label: 'Hashtag search'},
+    {path: '/by-user', label: 'User search'}
+  ];
+  constructor() {
+    this.navLinks.forEach((e, i) => {
+      if (e.path === window.location.pathname) {
+        this.activeLinkIndex = i;
+      }
+    });
   }
 }
